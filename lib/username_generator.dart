@@ -15,7 +15,7 @@ class UsernameGenerator {
   List<String> names = seed_data.names;
 
   /// A list of adjectives for generating a random username from
-  List<String> adjectives = seed_data.adjectives;
+//   List<String> adjectives = seed_data.adjectives;
   final Random _random = Random();
 
   /// Generate username from email or name, date or numbers
@@ -53,6 +53,8 @@ class UsernameGenerator {
     var adjective = '';
     if (adjectives.isNotEmpty) {
       adjective = _getRandomElement(adjectives);
+    }else if(seed_data.adjectives.isNotEmpty){
+      adjective = _getRandomElement(seed_data.adjectives);
     }
 
     var numberString = '';
